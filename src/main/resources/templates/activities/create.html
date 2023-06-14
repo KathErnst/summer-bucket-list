@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+    <h1>Create Activity</h1>
+
+    <nav th:replace="fragments :: navigation"></nav>
+
+    <form method="post" action="/activities/create">
+        <div class="form-group">
+        <label>Activity:
+            <input class="form-control" type="text" name="activityName">
+        </label>
+        </div>
+        <div class="form-group">
+        <label>Did it!
+            <input class="form-control" type="checkbox" name="activityCompleted">
+        </label>
+        </div>
+        <div class="form-group">
+        <input class="form-control" type="submit" value="Create Activity">
+        </div>
+    </form>
+
+</body>
+</html>
