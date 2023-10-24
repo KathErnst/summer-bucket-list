@@ -14,8 +14,7 @@ public class Activity {
     private String name;
     private Boolean completed = false;
 
-    public Activity(int id, String name, Boolean completed) {
-        this.id = id;
+    public Activity(String name, Boolean completed) {
         this.name = name;
         this.completed = completed;
     }

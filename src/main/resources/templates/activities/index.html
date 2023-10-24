@@ -10,11 +10,18 @@
 
 <p th:unless="${activities} and ${activities.size()}">No activities!</p>
 
-<ul>
-    <th:block th:each="activity : ${activities}">
-        <li th:text="${activity}"></li>
-    </th:block>
-</ul>
+<table>
+    <tr>
+        <th>Activity</th>
+        <th>Completed?</th>
+    </tr>
+    <span th:each="activity : ${activities}">
+        <tr>
+            <td th:text="${activityName}"></td>
+            <td th:text="${activityCompleted}"></td>
+        </tr>
+    </span>
+</table>
 
 </body>
 </html>
