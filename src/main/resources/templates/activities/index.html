@@ -8,7 +8,10 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${activities} and ${activities.size()}">No activities!</p>
+<p th:unless="${activities} and ${activities.size()}">
+    No activities! Need ideas?
+    <a href="https://explorestlouis.com/events/">Find events in St. Louis</a>
+</p>
 
 <table class="table table-striped table-hover">
     <thead>
