@@ -15,12 +15,12 @@
         <th>Activity</th>
         <th>Completed?</th>
     </tr>
-    <span th:each="activity : ${activities}">
+    <th:block th:each="activity : ${activities}">
         <tr>
-            <td th:text="${activityName}"></td>
-            <td th:text="${activityCompleted}"></td>
+            <td th:text="${activity.name}"></td>
+            <td th:text="${activity.completed}"></td>
         </tr>
-    </span>
+    </th:block>
 </table>
 
 </body>

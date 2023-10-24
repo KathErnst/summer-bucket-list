@@ -11,25 +11,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+@RequestMapping("activities")
 public class ActivityController {
 
     @Autowired
     private ActivityRepository activityRepository;
-    @GetMapping("activities/index")
+
+    @GetMapping("index")
     public String displayAllActivities(Model model) {
+        model.addAttribute("title", "All Activities");
         model.addAttribute("activities", activityRepository.findAll());
         return "activities/index";
     }
 
-    @GetMapping("activities/create")
+    @GetMapping("create")
     public String renderCreateActivityForm() {
         return "activities/create";
     }
 
-    @PostMapping("activities/create")
+    @PostMapping("create")
     public String processCreateActivityForm(@RequestParam String activityName, @RequestParam Boolean activityCompleted) {
         Activity newActivity = new Activity(activityName, activityCompleted);
         activityRepository.save(newActivity);
-        return "redirect:/activities/index";
+        return "redirect:index";
     }
 }
