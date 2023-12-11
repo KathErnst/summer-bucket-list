@@ -16,8 +16,8 @@
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th>Activity</th>
-            <th>Completed?</th>
+            <th scope="row">Activity</th>
+            <th scope="row">Completed?</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +26,7 @@
                 <td th:text="${activity.name}"></td>
                 <td th:if="${activity.completed}">&#x2611</td>
                 <td th:if="!${activity.completed}">&#x2610</td>
+                <td><input type="button"></td>
             </tr>
         </th:block>
     </tbody>

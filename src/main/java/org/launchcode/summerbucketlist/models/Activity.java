@@ -3,6 +3,7 @@ package org.launchcode.summerbucketlist.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -11,7 +12,10 @@ public class Activity {
     @Id
     @GeneratedValue
     private int id;
+
+    @NotBlank
     private String name;
+
     private Boolean completed = false;
 
     public Activity(String name, Boolean completed) {
@@ -21,8 +25,13 @@ public class Activity {
 
     public Activity() {}
 
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

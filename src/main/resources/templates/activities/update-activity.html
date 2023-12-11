@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head  th:replace="fragments :: head">
+
+<body class ="container">
+
+<h1>Edit Activity</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" action="@{/activities/update/{id}(id=${activity.id})}">
+    <div class="form-group">
+        <label>Activity:
+            <input class="form-control" type="text" name="{activity.name}">
+        </label>
+    </div>
+    <div class="form-group">
+        <label>Did it!
+            <input
+                    class="form-control"
+                    type="radio"
+                    th:field="{activity.completed}"
+                    value="true">
+            <label for="activityCompletedTrue">Yes</label>
+            <input
+                    class="form-control"
+                    th:field="{activity.completed}"
+                    value="false">
+            <label for="activityCompletedFalse">Not Yet</label>
+        </label>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="submit" value="Update Activity">
+    </div>
+</form>
+</body>
+</html>
