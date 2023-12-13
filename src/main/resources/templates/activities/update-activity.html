@@ -8,7 +8,7 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<form method="post" action="@{/activities/update/{id}(id=${activity.id})}">
+<form method="post" th:action="@{/activities/update/{id}(id=${activity.id})}">
     <div class="form-group">
         <label>Activity:
             <input class="form-control" type="text" name="{activity.name}">
@@ -21,12 +21,12 @@
                     type="radio"
                     th:field="{activity.completed}"
                     value="true">
-            <label for="activityCompletedTrue">Yes</label>
+            <label>Yes</label>
             <input
                     class="form-control"
                     th:field="{activity.completed}"
                     value="false">
-            <label for="activityCompletedFalse">Not Yet</label>
+            <label>Not Yet</label>
         </label>
     </div>
     <div class="form-group">
