@@ -10,24 +10,23 @@
 
 <form method="post" th:action="@{/activities/update/{id}(id=${activity.id})}">
     <div class="form-group">
-        <label>Activity:
-            <input class="form-control" type="text" name="{activity.name}">
-        </label>
+        <label for="activityName">Activity:</label>
+        <input class="form-control" type="text" id="activityName" th:field="${activity.name}">
     </div>
     <div class="form-group">
-        <label>Did it!
-            <input
-                    class="form-control"
+            <label for="activityCompleted">Done</label>
+            <input id="activityCompleted"
+                   name="activityCompleted"
+                    class="button"
                     type="radio"
-                    th:field="{activity.completed}"
-                    value="true">
-            <label>Yes</label>
-            <input
-                    class="form-control"
-                    th:field="{activity.completed}"
-                    value="false">
-            <label>Not Yet</label>
-        </label>
+                    th:field="${activity.completed}"
+                    th:value="true"><br>
+            <label for="activityNotCompleted">To Do</label>
+            <input id="activityNotCompleted"
+                   name="activityCompleted"
+                   class="button"
+                   type="radio"
+                   th:value="false">
     </div>
     <div class="form-group">
         <input class="form-control" type="submit" value="Update Activity">

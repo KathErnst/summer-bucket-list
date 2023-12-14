@@ -25,14 +25,17 @@ public class ActivityController {
     }
 
     @GetMapping("create")
-    public String renderCreateActivityForm() {
+    public String renderCreateActivityForm(Model model) {
+        Activity activity = new Activity();
+        activity.setCompleted(false);
+        model.addAttribute("activity", activity);
+
         return "activities/create-activity";
     }
 
     @PostMapping("create")
-    public String processCreateActivityForm(@RequestParam String activityName, @RequestParam Boolean activityCompleted) {
-        Activity newActivity = new Activity(activityName, activityCompleted);
-        activityRepository.save(newActivity);
+    public String processCreateActivityForm(@ModelAttribute("activity") Activity activity) {
+        activityRepository.save(activity);
         return "redirect:index";
     }
 

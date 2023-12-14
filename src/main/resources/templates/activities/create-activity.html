@@ -10,30 +10,27 @@
 
     <form method="post" action="/activities/create">
         <div class="form-group">
-        <label>Activity:
-            <input class="form-control" type="text" name="activityName">
-        </label>
+            <label for="activityName">Activity:</label>
+            <input class="form-control" type="text" id="activityName" th:field="${activity.name}">
         </div>
         <div class="form-group">
-        <label>Did it!
-            <input
-                    class="form-control"
-                    type="radio"
-                    id="activityCompletedTrue"
-                    name="activityCompleted"
-                    value="true">
-            <label for="activityCompletedTrue">Yes</label>
-            <input
-                    class="form-control"
-                    type="radio"
-                    id="activityCompletedFalse"
-                    name="activityCompleted"
-                    value="false">
-            <label for="activityCompletedFalse">Not Yet</label>
-        </label>
+            <label for="activityCompleted">Done</label>
+            <input id="activityCompleted"
+                   name="activityCompleted"
+                   class="button"
+                   type="radio"
+                   value="true"
+                   th:field="${activity.completed}"><br>
+            <label for="activityNotCompleted">To Do</label>
+            <input id="activityNotCompleted"
+                   name="activity_completed"
+                   class="button"
+                   type="radio"
+                   value="false"
+                   th:field="${activity.completed}">
         </div>
         <div class="form-group">
-        <input class="form-control" type="submit" value="Create Activity">
+            <input class="form-control" type="submit" value="Update Activity">
         </div>
     </form>
 
