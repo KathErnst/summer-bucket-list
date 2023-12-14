@@ -20,13 +20,14 @@
                     class="button"
                     type="radio"
                     th:field="${activity.completed}"
-                    th:value="true"><br>
+                    value="true"><br>
             <label for="activityNotCompleted">To Do</label>
             <input id="activityNotCompleted"
                    name="activityCompleted"
                    class="button"
                    type="radio"
-                   th:value="false">
+                   value="false"
+                   th:field="${activity.completed}">
     </div>
     <div class="form-group">
         <input class="form-control" type="submit" value="Update Activity">
